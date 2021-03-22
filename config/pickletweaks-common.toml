@@ -30,6 +30,8 @@
 	enabled = false
 	#Enabling this makes it so custom repair materials override the default ones for the tools specified.
 	overrideMode = false
+	#Crafting grid repair removes all non-curse enchantments.
+	stripEnchantments = false
 
 #General configuration options.
 [General]
@@ -65,4 +67,8 @@
 	apples = true
 	#Enable Meshes?
 	meshes = false
+	#Enable Sickles?
+	sickles = true
+	#Enable Scythes?
+	scythes = true
 

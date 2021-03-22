@@ -7,8 +7,6 @@
 	"Use Piston Logic Replacement" = true
 	#Allowed values: (0,)
 	"Piston Push Limit" = 12
-	#Quark messes with the Stonecutter to allow any item that can be used in it to be shift clicked in. Set this to false to turn it off.
-	"Hack Stonecutter Shift Click" = true
 	#Blocks that Quark should treat as Shulker Boxes.
 	"Shulker Boxes" = ["minecraft:white_shulker_box", "minecraft:orange_shulker_box", "minecraft:magenta_shulker_box", "minecraft:light_blue_shulker_box", "minecraft:yellow_shulker_box", "minecraft:lime_shulker_box", "minecraft:pink_shulker_box", "minecraft:gray_shulker_box", "minecraft:light_gray_shulker_box", "minecraft:cyan_shulker_box", "minecraft:purple_shulker_box", "minecraft:blue_shulker_box", "minecraft:brown_shulker_box", "minecraft:green_shulker_box", "minecraft:red_shulker_box", "minecraft:black_shulker_box"]
 	#Should Quark treat anything with 'shulker_box' in its item identifier as a shulker box?
@@ -126,6 +124,8 @@
 	"Vertical Planks" = true
 	"Vertical Slabs" = true
 	"Wooden Posts" = true
+	Hedges = true
+	Stools = true
 
 	[building.compressed_blocks]
 		"Charcoal Block and Blaze Lantern Stay On Fire Forever" = true
@@ -153,6 +153,8 @@
 		"Enable Blaze Lantern" = true
 		"Enable Bonded Leather" = true
 		"Enable Bonded Rabbit Hide" = true
+		#Allowed values: [0,)
+		"Bamboo Bundle Fuel Time" = 500
 
 	[building.more_brick_types]
 		"Enable Sandy Bricks" = true
@@ -163,6 +165,7 @@
 		"Enable Blue Nether Bricks" = true
 		#This also includes Red Sandstone Bricks and Soul Sandstone Bricks
 		"Enable Sandstone Bricks" = true
+		"Enable Blackstone Variant Bricks" = true
 
 	[building.more_stone_variants]
 		"Enable Bricks" = true
@@ -206,7 +209,6 @@
 [management]
 	"Chests In Boats" = true
 	"Easy Transfering" = false
-	"F To Switch" = true
 	"Hotbar Changer" = true
 	"Inventory Sorting" = false
 	"Item Sharing" = true
@@ -217,6 +219,8 @@
 		"Enable Player Inventory" = false
 		"Enable Player Inventory In Chests" = false
 		"Enable Chests" = false
+		#Play a click when sorting inventories using keybindings
+		"Satisfying Click" = true
 
 	[management.item_sharing]
 		"Render Items In Chat" = true
@@ -236,13 +240,24 @@
 	"Seed Pouch" = true
 
 	[tools.ancient_tomes]
+		#Set to 0 to not generate in Dungeons
 		"Dungeon Weight" = 20
+		#Set to 0 to not generate in Stronghold Libraries
 		"Library Weight" = 30
+		#Set to 0 to not generate in Monster Boxes
 		"Monster Box Weight" = 5
 		"Item Quality" = 2
 		"Merge Cost" = 35
 		"Apply Cost" = 35
 		"Valid Enchantments" = ["minecraft:feather_falling", "minecraft:thorns", "minecraft:sharpness", "minecraft:smite", "minecraft:bane_of_arthropods", "minecraft:knockback", "minecraft:fire_aspect", "minecraft:looting", "minecraft:sweeping", "minecraft:efficiency", "minecraft:unbreaking", "minecraft:fortune", "minecraft:power", "minecraft:punch", "minecraft:luck_of_the_sea", "minecraft:lure", "minecraft:loyalty", "minecraft:riptide", "minecraft:impaling", "minecraft:piercing"]
+		#Set to 0 to not generate in Bastions
+		"Bastion Weight" = 25
+		#Set to 0 to not generate in Woodland Mansions
+		"Woodland Mansion Weight" = 15
+		#Set to 0 to not generate in Nether Fortresses
+		"Nether Fortress Weight" = 0
+		#Set to 0 to not generate in Underwater Ruins
+		"Underwater Ruin Weight" = 0
 
 	[tools.bottled_cloud]
 		"Cloud Level Bottom" = 127
@@ -280,11 +295,11 @@
 		Timeout = 20
 		#2 is Iron, 3 is Diamond.
 		"Harvest Level" = 3
-		#2 is Iron, 4 is Diamond.
+		#2 is Iron, 3 is Diamond.
 		"Netherite Harvest Level" = 3
 		#Set to -1 to have the Pickarang be unbreakable.
 		Durability = 800
-		#Set to -1 to have the Pickarang be unbreakable.
+		#Set to -1 to have the Flamerang be unbreakable.
 		"Netherite Durability" = 1040
 		#22.5 is ender chests, 25.0 is monster boxes, 50 is obsidian. Most things are below 5.
 		"Max Hardness" = 20.0
@@ -332,6 +347,7 @@
 	"Utility Recipes" = true
 	"Villagers Follow Emeralds" = true
 	"Skull Pikes" = true
+	"Lava Bucket As Trash" = true
 
 	[tweaks.automatic_recipe_unlock]
 		#A list of recipe names that should NOT be added in by default
@@ -934,6 +950,8 @@
 		"Min Mob Count" = 5
 		"Max Mob Count" = 8
 		"Enable Extra Loot Table" = true
+		#How many blocks to search vertically from a position before trying to place a block. Higher means you'll get more boxes in open spaces.
+		"Search Range" = 6
 
 		[world.monster_box.dimensions]
 			"Is Blacklist" = false
@@ -970,7 +988,7 @@
 				#Allowed values: [0,255]
 				"Min Height" = 0
 				#Allowed values: [0,255]
-				"Max Height" = 256
+				"Max Height" = 255
 				#Allowed values: [0,)
 				"Cluster Size" = 33
 				#Allowed values: [0,)
@@ -986,7 +1004,7 @@
 				#Allowed values: [0,255]
 				"Min Height" = 0
 				#Allowed values: [0,255]
-				"Max Height" = 256
+				"Max Height" = 255
 				#Allowed values: [0,)
 				"Cluster Size" = 33
 				#Allowed values: [0,)
@@ -1002,7 +1020,7 @@
 				#Allowed values: [0,255]
 				"Min Height" = 0
 				#Allowed values: [0,255]
-				"Max Height" = 256
+				"Max Height" = 255
 				#Allowed values: [0,)
 				"Cluster Size" = 33
 				#Allowed values: [0,)
@@ -1018,7 +1036,7 @@
 				#Allowed values: [0,255]
 				"Min Height" = 0
 				#Allowed values: [0,255]
-				"Max Height" = 256
+				"Max Height" = 255
 				#Allowed values: [0,)
 				"Cluster Size" = 33
 				#Allowed values: [0,)
@@ -1034,7 +1052,7 @@
 				#Allowed values: [0,255]
 				"Min Height" = 0
 				#Allowed values: [0,255]
-				"Max Height" = 256
+				"Max Height" = 255
 				#Allowed values: [0,)
 				"Cluster Size" = 33
 				#Allowed values: [0,)
@@ -1050,7 +1068,7 @@
 				#Allowed values: [0,255]
 				"Min Height" = 0
 				#Allowed values: [0,255]
-				"Max Height" = 256
+				"Max Height" = 255
 				#Allowed values: [0,)
 				"Cluster Size" = 33
 				#Allowed values: [0,)
@@ -1422,6 +1440,8 @@
 	Frogs = true
 	Stonelings = true
 	Toretoise = true
+	Forgotten = true
+	Wraith = true
 
 	[mobs.crabs]
 		"Enable Brewing" = true
@@ -1516,7 +1536,6 @@
 				"Is Blacklist" = true
 
 	[mobs.toretoise]
-                              
 		"Max Y Level" = 32
 
 		[mobs.toretoise.dimensions]
@@ -1537,6 +1556,30 @@
 				# mushroom, nether]
 				"Biome Categories" = ["none", "nether", "the_end"]
 				"Is Blacklist" = true
+
+	[mobs.forgotten]
+		#1 in this many Skeletons that spawn under the threshold are replaced with Forgotten.
+		"Forgotten Spawn Rate" = 0.05
+		"Max Height For Spawn" = 20
+
+	[mobs.wraith]
+		#List of sound sets to use with wraiths.
+		#Three sounds must be provided per entry, separated by | (in the format idle|hurt|death). Leave blank for no sound (i.e. if a mob has no ambient noise)
+		"Wraith Sounds" = ["entity.sheep.ambient|entity.sheep.hurt|entity.sheep.death", "entity.cow.ambient|entity.cow.hurt|entity.cow.death", "entity.pig.ambient|entity.pig.hurt|entity.pig.death", "entity.chicken.ambient|entity.chicken.hurt|entity.chicken.death", "entity.horse.ambient|entity.horse.hurt|entity.horse.death", "entity.cat.ambient|entity.cat.hurt|entity.cat.death", "entity.wolf.ambient|entity.wolf.hurt|entity.wolf.death", "entity.villager.ambient|entity.villager.hurt|entity.villager.death", "entity.polar_bear.ambient|entity.polar_bear.hurt|entity.polar_bear.death", "entity.zombie.ambient|entity.zombie.hurt|entity.zombie.death", "entity.skeleton.ambient|entity.skeleton.hurt|entity.skeleton.death", "entity.spider.ambient|entity.spider.hurt|entity.spider.death", "|entity.creeper.hurt|entity.creeper.death", "entity.endermen.ambient|entity.endermen.hurt|entity.endermen.death", "entity.zombie_pig.ambient|entity.zombie_pig.hurt|entity.zombie_pig.death", "entity.witch.ambient|entity.witch.hurt|entity.witch.death", "entity.blaze.ambient|entity.blaze.hurt|entity.blaze.death", "entity.llama.ambient|entity.llama.hurt|entity.llama.death", "|quark:entity.stoneling.cry|quark:entity.stoneling.die", "quark:entity.frog.idle|quark:entity.frog.hurt|quark:entity.frog.die"]
+
+		[mobs.wraith.spawn_config]
+			"Max Cost" = 0.7
+			"Spawn Cost" = 0.15
+			#Allowed values: (0,)
+			"Spawn Weight" = 8
+			#Allowed values: [1,)
+			"Min Group Size" = 1
+			#Allowed values: [1,)
+			"Max Group Size" = 3
+
+			[mobs.wraith.spawn_config.biomes]
+				Biomes = ["minecraft:soul_sand_valley"]
+				"Is Blacklist" = false
 
 [client]
 	"Back Button Keybind" = true
@@ -1577,6 +1620,7 @@
 		#So to display a carrot on a stick on a mending book, for example, you use:
 		#minecraft:mending=minecraft:carrot_on_a_stick
 		"Enchanting Additional Stacks" = []
+		"Food Compression Threshold" = 4
 
 	[client.usage_ticker]
 		#Switch the armor display to the off hand side and the hand display to the main hand side
@@ -1604,6 +1648,7 @@
 	"Matrix Enchanting" = true
 	Pipes = true
 	"Totem Of Holding" = true
+	Crate = false
 
 	[oddities.backpack]
 		#Set this to true to allow the backpacks to be unequipped even with items in them
@@ -1680,6 +1725,9 @@
 		"Allow Anyone To Collect" = true
 		"Enable Soul Compass" = true
 
+	[oddities.crate]
+		"Max Items" = 640
+
 [experimental]
 	"Adjustable Chat" = false
 	"Custom Underground Biome" = false
@@ -1706,10 +1754,14 @@
 		"Nerf Villager Discount" = true
 		#Makes Iron Golems not drop Iron Ingots
 		"Disable Iron Farms" = true
+		#Makes Boats not glide on ice
+		"Disable Ice Roads" = true
+		#Makes Sheep not drop Wool when killed
+		"Disable Wool Drops" = true
 
 	[experimental.overlay_shader]
 		#Sets the name of the shader to load on a regular basis. This can load any shader the Camera module can (and requires the Camera module enabled to apply said logic).
 		#Some useful shaders include 'desaturate', 'oversaturate', 'bumpy'
-		#Colorblind simulation shaders are available in the form of 'deutranopia', 'protanopia', 'tritanopia', and 'achromatopsia'
+		#Colorblind simulation shaders are available in the form of 'deuteranopia', 'protanopia', 'tritanopia', and 'achromatopsia'
 		Shader = "none"
 

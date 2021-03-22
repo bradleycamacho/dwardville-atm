@@ -11,7 +11,7 @@ centrifugeTier4Mutliplier = 3
 #Range: 1 ~ 150
 centrifugeTier5Mutliplier = 4
 #
-#Centrifuge Tier output Multiplier
+#Centrifuge Tier Creative output Multiplier
 #Range: 1 ~ 150
 centrifugeTierCreativeMutliplier = 10
 #
@@ -31,8 +31,9 @@ centrifugeTier4RecipeTime = 0.25
 centrifugeTier5RecipeTime = 0.125
 #
 #Centrifuge Tier Recipe Time 
-#The Value is the Tick for the Recipe Time
-#Range: 1 ~ 500
+#The Value is the Tick for the Recipe Time 
+#If you set the Value to 0 the Game will Crash :)
+#Range: -1 ~ 500
 centrifugeTierCreativeRecipeTime = 1
 #
 #Centrifuge Tier 3 RF per Block Multiplier
@@ -99,3 +100,4 @@ centrifugeTierCreativeItemMaxStackSize = 16384
 #Only disable if you have Compressium downloaded 
 #If not there will be no Crafting Recipes :)
 CompressedBlocks = false
+
